@@ -34,7 +34,7 @@ Tạo 2 thư mục chứa lần lượt cho Compute1 và Compute2:
     mkdir compute1 compute2
 
 ####2. Cấu hình Rsync và Crontab
-Ý tưởng là viết scrift thực hiện đẩy file bằng rsync, đặt lịch với sự hỗ trợ của crontab.<br>
+Ý tưởng là viết script thực hiện đẩy file bằng rsync, đặt lịch với sự hỗ trợ của crontab.<br>
 Trên GFS2, tạo SSH key để thực hiện ssh đến Compute1 và Compute2 mà không cần password:
 
     ssh-keygen
