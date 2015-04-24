@@ -1,4 +1,4 @@
-# instances_backup
+# Instances_backup
 <i>Giải pháp dự phòng cho các máy ảo trên hệ thống OpenStack</i>
 ###I. Thông tin LAB
 **Ý tưởng:** Kết hợp [**Rsync**](https://github.com/hocchudong/rsync) và [**GlusterFS**](https://github.com/hocchudong/GlusterFS) để thực hiện dự phòng. Sử dụng rsync đẩy thư mục chứa máy ảo trên Compute1 và Compute2 xuống ***replicate volume*** tạo trên GFS1 và GFS2. Thực hiện vào 4h, 12h và 19h hàng ngày.
