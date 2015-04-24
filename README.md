@@ -70,6 +70,10 @@ Chèn nội dung sau:
     rsync -avze --exclude=_base/ ssh root@$COM1:$SRC $DES1
     rsync -avze --exclude=_base/ ssh root@$COM2:$SRC $DES2
 
+Thêm quyền thực thi:
+
+    chmod +x /root/backup.sh
+
 Cấu hình Crontab để chạy script trên vào 4h, 12h, 19h hàng ngày:
 
     crontab -e
