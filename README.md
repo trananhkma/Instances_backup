@@ -80,7 +80,7 @@ Cấu hình Crontab để chạy script trên vào 4h, 12h, 19h hàng ngày:
 
 Thêm dòng sau:
 
-    0 4,12,7 * * * /root/backup.sh
+    0 4,12,19 * * * /root/backup.sh
 
 Save lại rồi khởi động lại crontab.<br>
 <br>
