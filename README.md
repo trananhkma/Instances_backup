@@ -67,8 +67,8 @@ Chèn nội dung sau:
     DES1="/root/backup/compute1"
     DES2="/root/backup/compute2"
     
-    rsync -avze --exclude=_base/ ssh uvdc@$COM1:$SRC $DES1
-    rsync -avze --exclude=_base/ ssh uvdc@$COM2:$SRC $DES2
+    rsync -avz --exclude=_base/ -e ssh uvdc@$COM1:$SRC $DES1
+    rsync -avz --exclude=_base/ -e ssh uvdc@$COM2:$SRC $DES2
 
 Thêm quyền thực thi:
 
