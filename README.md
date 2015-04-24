@@ -42,15 +42,15 @@ Trên GFS2, tạo SSH key để thực hiện ssh đến Compute1 và Compute2 m
 Nhấn enter 3 lần (Đặt đường dẫn chứa key mặc định và **không** đặt passphrase)<br>
 Đẩy key đến Compute1, gán quyền cho key:
 
-    ssh root@10.10.10.101 mkdir -p .ssh
-    cat .ssh/id_rsa.pub | ssh root@10.10.10.101 'cat >> .ssh/authorized_keys'
-    ssh root@10.10.10.101 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+    ssh uvdc@10.10.10.101 mkdir -p .ssh
+    cat .ssh/id_rsa.pub | ssh uvdc@10.10.10.101 'cat >> .ssh/authorized_keys'
+    ssh uvdc@10.10.10.101 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
 Làm tương tự với Compute2:
 
-    ssh root@10.10.10.102 mkdir -p .ssh
-    cat .ssh/id_rsa.pub | ssh root@10.10.10.102 'cat >> .ssh/authorized_keys'
-    ssh root@10.10.10.102 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+    ssh uvdc@10.10.10.102 mkdir -p .ssh
+    cat .ssh/id_rsa.pub | ssh uvdc@10.10.10.102 'cat >> .ssh/authorized_keys'
+    ssh uvdc@10.10.10.102 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
 Sau khi hoàn thành bước này có thể ssh đến Compute1 và Compute2 mà không cần nhập password.<br>
 Tiếp theo tạo script lấy dữ liệu dùng rsync:
@@ -78,4 +78,11 @@ Thêm dòng sau:
 
     0 4,12,7 * * * /root/backup.sh
 
-Save lại rồi khởi động lại crontab. Hoàn thành bài LAB
+Save lại rồi khởi động lại crontab.<br>
+<br>
+Cấu hình trên cả Compute1 và Compute2:<br>
+Gán quyền sở hữu thư mục cho user uvdc:
+
+    sudo chown uvdc:uvdc /var/lib/nova/instances/
+
+Hoàn thành bài LAB.
