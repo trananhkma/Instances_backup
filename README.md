@@ -87,6 +87,6 @@ Save lại rồi khởi động lại crontab.<br>
 Cấu hình trên cả Compute1 và Compute2:<br>
 Gán quyền sở hữu thư mục cho user uvdc:
 
-    sudo chown uvdc:uvdc /var/lib/nova/instances/
+    sudo chown -R uvdc:uvdc /var/lib/nova/instances/
 
 Hoàn thành bài LAB.
